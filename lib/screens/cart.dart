@@ -1,190 +1,216 @@
 import 'package:flutter/material.dart';
+import 'package:item_count_number_button/item_count_number_button.dart';
 
 class Page3 extends StatelessWidget {
-  const Page3({super.key});
+  const Page3({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: Image(
-          image: AssetImage('../assets/images/1.jpg'),
-          fit: BoxFit.cover,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        backgroundColor: Colors.black,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('../assets/images/1.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(children: [
-            Positioned(
-              child: Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30),
-                    ),
-                    child: Image.asset(
-                      '../assets/images/1.jpg',
-                      height: 150,
-                      width: 500,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Positioned(
-                    top: 20,
-                    left: 50,
-                    child: Text(
-                      "Quantity",
-                      style: TextStyle(
+      body: Container(
+        color: Colors.black,
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      child: Container(
                         color: Colors.black,
-                        fontWeight: FontWeight.normal,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                          child: Container(
+                            padding: EdgeInsets.all(30),
+                            width: double.maxFinite,
+                            color: Colors.white,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Quantity"),
+                                Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(100.0),
+                                        ),
+                                        border: Border.all(
+                                          width: 1,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      child: ItemCount(
+                                        initialValue: 1,
+                                        minValue: 0,
+                                        maxValue: 10,
+                                        decimalPlaces: 0,
+                                        color: Colors.white,
+                                        onChanged: (value) {
+                                          // Handle counter value changes
+                                          print('Selected value: $value');
+                                        },
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Text(
+                                            "70990",
+                                            style: TextStyle(fontSize: 30),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (_) => Page3(),
+                                            ),
+                                          );
+                                        },
+                                        child: Text(
+                                          "Add to cart",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          fixedSize: Size(300, 40),
+                                          backgroundColor:
+                                              Color.fromRGBO(151, 151, 151, 1),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.favorite),
+                                        color: Colors.red,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: 90,
-                    left: 40,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Add to cart',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.brown,
-                      ),
-                    ),
-                    width: 200,
-                    height: 30,
-                  ),
-                  Positioned(
-                    top: 80,
-                    right: 20,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                        color: Colors.red,
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      color: Colors.black,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.shopping_bag_outlined),
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Cart",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: 40,
-                    right: 20,
-                    child: Text(
-                      '₱175',
-                      style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
+                    Container(
+                      color: Colors.black,
+                      child: Column(
+                        children: [
+                          ListTile(
+                            contentPadding: EdgeInsets.all(20),
+                            leading:
+                                Image.asset('../assets/images/ip15prom.png'),
+                            title: Text(
+                              'IPhone 15 pro max',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              '7990',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                            trailing: Text(
+                              '1x',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                          ListTile(
+                            contentPadding: EdgeInsets.all(20),
+                            leading: Image.asset('../assets/images/ip11.png'),
+                            title: Text(
+                              'IPhone 11',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              '29000',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                            trailing: Text(
+                              '1x',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('../assets/images/1.jpg'),
-                  fit: BoxFit.cover,
+                  ],
                 ),
               ),
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Colors.white,
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                color: Colors.black,
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Text(
+                      "3 items",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
-                    title: Text(
-                      'Cart',
-                      style: TextStyle(color: Colors.white),
+                    SizedBox(
+                      width: 250,
                     ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(16),
-                    leading: SizedBox(
-                      child: Image.asset(
-                        '../assets/images/1.jpg',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    title: Text(
-                      'Vanilla Frappuccino',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    subtitle: Text(
-                      '175',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    trailing: Text(
-                      '1x',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Image.asset('../assets/images/1.jpg'),
-                    contentPadding: EdgeInsets.all(16),
-                    title: Text(
-                      'Caramel Frappuccino',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    subtitle: Text(
-                      '175',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    trailing: Text(
-                      '1x',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(20),
-                    leading: Image.asset('../assets/images/1.jpg'),
-                    title: Text(
-                      'Mocha Frappuccino',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    subtitle: Text(
-                      '175',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    trailing: Text(
-                      '1x',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(20),
-                    leading: Text(
-                      '3 items                                           ₱525',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    trailing: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        'Buy now',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                ],
+                    ElevatedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              "70990",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            Container(
+                                color: Colors.black,
+                                child: Text(
+                                  "Buy now",
+                                  style: TextStyle(color: Colors.white),
+                                ))
+                          ],
+                        ))
+                  ],
+                ),
               ),
-            )
-          ]),
+            ),
+          ],
         ),
       ),
     );

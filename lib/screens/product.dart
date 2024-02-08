@@ -10,10 +10,13 @@ class product extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(255, 152, 89, 1),
+        iconTheme: IconThemeData(
+          color: Colors.white, // Change the color of back icon here
+        ),
+        backgroundColor: Color.fromRGBO(238, 238, 238, 1),
       ),
       body: Container(
-        color: Color.fromRGBO(255, 153, 89, 1),
+        color: Color.fromRGBO(238, 238, 238, 1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -25,8 +28,8 @@ class product extends StatelessWidget {
                     children: [
                       Center(
                         child: Image.asset(
-                          '../assets/images/product.png',
-                          width: 300,
+                          '../assets/images/ip15prom.png',
+                          width: 80,
                         ),
                       ),
                       Container(
@@ -36,20 +39,17 @@ class product extends StatelessWidget {
                           children: [
                             Gap(12),
                             Text(
-                              "Dried apricots",
+                              "IPhone 15 pro max",
                               style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Row(
                               children: [
                                 Text(
-                                  "Artificial Selection" +
-                                      " • " +
-                                      "Taste sweet",
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.white),
+                                  "Titanum" + " • " + "USB-C",
+                                  style: TextStyle(fontSize: 10),
                                 ),
                                 Expanded(
                                   child: Row(
@@ -58,27 +58,22 @@ class product extends StatelessWidget {
                                       IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.star),
-                                        color: Colors.white,
                                       ),
                                       IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.star),
-                                        color: Colors.white,
                                       ),
                                       IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.star),
-                                        color: Colors.white,
                                       ),
                                       IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.star_half_outlined),
-                                        color: Colors.white,
                                       ),
                                       IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.star_outline),
-                                        color: Colors.white,
                                       ),
                                     ],
                                   ),
@@ -87,9 +82,10 @@ class product extends StatelessWidget {
                             ),
                             Gap(15),
                             Text(
-                              "Capacity",
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.white),
+                              "Specification",
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
                             ),
                             Row(
                               children: [
@@ -97,18 +93,21 @@ class product extends StatelessWidget {
                                   padding: EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                          width: 1, color: Colors.white)),
+                                    width: 1,
+                                  )),
                                   child: Column(
                                     children: [
                                       Text(
-                                        "Calories",
+                                        "Chip",
                                         style: TextStyle(
-                                            fontSize: 10, color: Colors.white),
+                                          fontSize: 10,
+                                        ),
                                       ),
                                       Text(
-                                        "90",
+                                        "A17 Pro chip",
                                         style: TextStyle(
-                                            fontSize: 17, color: Colors.white),
+                                          fontSize: 17,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -118,18 +117,21 @@ class product extends StatelessWidget {
                                   padding: EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                          width: 1, color: Colors.white)),
+                                    width: 1,
+                                  )),
                                   child: Column(
                                     children: [
                                       Text(
-                                        "Additive",
+                                        "Capacity",
                                         style: TextStyle(
-                                            fontSize: 10, color: Colors.white),
+                                          fontSize: 10,
+                                        ),
                                       ),
                                       Text(
-                                        "3%",
+                                        "1TB",
                                         style: TextStyle(
-                                            fontSize: 17, color: Colors.white),
+                                          fontSize: 17,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -141,18 +143,21 @@ class product extends StatelessWidget {
                                   padding: EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       border: Border.all(
-                                          width: 1, color: Colors.white)),
+                                    width: 1,
+                                  )),
                                   child: Column(
                                     children: [
                                       Text(
-                                        "Vitamin",
+                                        "Camera",
                                         style: TextStyle(
-                                            fontSize: 10, color: Colors.white),
+                                          fontSize: 10,
+                                        ),
                                       ),
                                       Text(
-                                        "8%",
+                                        "48 MP",
                                         style: TextStyle(
-                                            fontSize: 17, color: Colors.white),
+                                          fontSize: 17,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -185,7 +190,7 @@ class product extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Quantity(300g)"),
+                          Text("Quantity"),
                           Row(
                             children: [
                               Container(
@@ -213,7 +218,7 @@ class product extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text(
-                                      "\$9.43",
+                                      "70990",
                                       style: TextStyle(fontSize: 30),
                                     ),
                                   ],
@@ -233,12 +238,12 @@ class product extends StatelessWidget {
                                   },
                                   child: Text(
                                     "Add to cart",
-                                    style: TextStyle(color: Colors.black),
+                                    style: TextStyle(color: Colors.white),
                                   ),
                                   style: ElevatedButton.styleFrom(
                                       fixedSize: Size(300, 40),
                                       backgroundColor:
-                                          Color.fromRGBO(255, 205, 133, 1)),
+                                          Color.fromRGBO(151, 151, 151, 1)),
                                 ),
                                 SizedBox(
                                   width: 100,
@@ -264,7 +269,10 @@ class product extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (_) => Page3()));
+                    },
                     icon: Icon(Icons.shopping_bag_outlined),
                     color: Colors.white,
                   ),
@@ -277,7 +285,7 @@ class product extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Image.asset(
-                          '../assets/Images/1.jpg',
+                          '../assets/Images/ip15prom.png',
                           width: 25,
                         ),
                       ],
